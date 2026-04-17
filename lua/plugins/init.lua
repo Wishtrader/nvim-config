@@ -111,4 +111,10 @@ return {
       require("config.cmp")
     end,
   },
+  {
+    "rust-lang/rust.vim",
+      keys = {
+        { "<leader>rr", "<cmd>RustLsp dock<CR>", desc = "Rust LSP" }
+    }
+  }
 }
