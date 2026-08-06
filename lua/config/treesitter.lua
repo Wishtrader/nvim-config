@@ -5,6 +5,8 @@ local ensure_installed = {
   "bash",
   "c",
   "css",
+  "elixir",
+  "erlang",
   "html",
   "javascript",
   "json",

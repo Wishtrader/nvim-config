@@ -28,8 +28,9 @@ require("config.lazy")
 vim.opt.cursorline = true
 vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
 
-local themes = { "catppuccin", "cyberdream", "gruvbox", "tokyonight", "kanagawa", "rose-pine", "nightfox", "onedark", "everforest", "dracula" }
-local current_theme = 3
+local themes = { "catppuccin", "cyberdream", "gruvbox", "tokyonight", "kanagawa", "rose-pine", "nightfox", "onedark",
+  "everforest", "dracula" }
+local current_theme = 1
 
 local theme_cursor_colors = {
   gruvbox = { bg = "#b8bb26", fg = "#282828" },

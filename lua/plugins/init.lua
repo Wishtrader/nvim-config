@@ -33,7 +33,6 @@ return {
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>o", builtin.find_files, { desc = "Find files" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
@@ -46,9 +45,9 @@ return {
     branch = "v3.x",
     cmd = "Neotree",
     keys = {
-      { "<leader>e", "<cmd>Neotree toggle filesystem reveal left<CR>", desc = "Toggle file explorer" },
-      { "<leader>be", "<cmd>Neotree toggle buffers right<CR>", desc = "Toggle buffer explorer" },
-      { "<leader>ge", "<cmd>Neotree toggle git_status right<CR>", desc = "Toggle git explorer" },
+      { "<leader>e",  "<cmd>Neotree toggle filesystem reveal left<CR>", desc = "Toggle file explorer" },
+      { "<leader>be", "<cmd>Neotree toggle buffers right<CR>",          desc = "Toggle buffer explorer" },
+      { "<leader>ge", "<cmd>Neotree toggle git_status right<CR>",       desc = "Toggle git explorer" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -108,8 +107,8 @@ return {
   },
   {
     "rust-lang/rust.vim",
-      keys = {
-        { "<leader>rr", "<cmd>RustLsp dock<CR>", desc = "Rust LSP" }
+    keys = {
+      { "<leader>rr", "<cmd>RustLsp dock<CR>", desc = "Rust LSP" }
     }
   },
   -- Completion
@@ -185,6 +184,14 @@ return {
     config = function()
       require("which-key").setup()
     end,
+  },
+
+  -- Superfile
+  {
+    "aquibbaig/superfile.nvim",
+    keys = {
+      { "<leader>]", function() require("superfile").toggle() end, desc = "Toggle Superfile" },
+    },
   },
 
 }
