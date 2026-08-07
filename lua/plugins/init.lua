@@ -194,4 +194,20 @@ return {
     },
   },
 
+  -- Elixir / Phoenix
+  {
+    "elixir-tools/elixir-tools.nvim",
+    version = "*",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("elixir").setup({
+        -- ElixirLS управляется через mason-lspconfig, не запускаем второй
+        elixirls = { enable = false },
+        nextls = { enable = false },
+        projectionist = { enable = true },
+      })
+    end,
+  },
+
 }

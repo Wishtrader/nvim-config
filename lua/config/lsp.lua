@@ -1,4 +1,4 @@
-local servers = { "lua_ls", "pyright", "ts_ls", "gopls", "rust_analyzer" }
+local servers = { "lua_ls", "pyright", "ts_ls", "gopls", "rust_analyzer", "elixirls" }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -47,6 +47,15 @@ setup_server("lua_ls", {
       workspace = {
         checkThirdParty = false,
       },
+    },
+  },
+})
+
+setup_server("elixirls", {
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = true,
     },
   },
 })

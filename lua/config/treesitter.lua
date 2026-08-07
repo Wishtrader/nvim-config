@@ -7,6 +7,7 @@ local ensure_installed = {
   "css",
   "elixir",
   "erlang",
+  "heex",
   "html",
   "javascript",
   "json",
