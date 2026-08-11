@@ -174,7 +174,16 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     config = function()
-      require("lsp_signature").setup()
+      require("lsp_signature").setup({
+        ignore_error = function(err, ctx, config)
+          if ctx and ctx.client_id then
+            local client = vim.lsp.get_client_by_id(ctx.client_id)
+            if client and client.name == "elixirls" then
+              return true
+            end
+          end
+        end,
+      })
     end,
   },
 
