@@ -4,6 +4,7 @@ treesitter.setup({})
 local ensure_installed = {
   "bash",
   "c",
+  "dart",
   "css",
   "elixir",
   "erlang",

@@ -18,6 +18,13 @@ local on_attach = function(_, bufnr)
   vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, opts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+
+  if vim.bo[bufnr].filetype == "dart" then
+    vim.keymap.set("n", "<leader>Fw", "<cmd>FlutterRun<cr>", opts)
+    vim.keymap.set("n", "<leader>Fr", "<cmd>FlutterRestart<cr>", opts)
+    vim.keymap.set("n", "<leader>Fq", "<cmd>FlutterQuit<cr>", opts)
+    vim.keymap.set("n", "<leader>Frn", "<cmd>FlutterRename<cr>", opts)
+  end
 end
 
 local function setup_server(server, opts)
@@ -63,3 +70,5 @@ setup_server("elixirls", {
 for _, server in ipairs({ "pyright", "ts_ls" }) do
   setup_server(server)
 end
+
+setup_server("dartls")
